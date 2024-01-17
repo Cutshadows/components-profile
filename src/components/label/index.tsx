@@ -1,4 +1,3 @@
-import './mylabel.css';
 
 const Label = () => {
   return (
