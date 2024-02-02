@@ -1,8 +1,5 @@
-
 const Label = () => {
-  return (
-	<button />
-  )
-}
+	return <button />;
+};
 
 export default Label;

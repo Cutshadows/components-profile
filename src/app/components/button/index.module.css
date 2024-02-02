@@ -1,10 +1,11 @@
 .main {
+	position: relative;
+	overflow: hidden;
 	align-items: center;
 	border: 2px solid #111;
 	border-radius: 8px;
 	box-sizing: border-box;
 	cursor: pointer;
-	display: flex;
 	font-family: Inter,sans-serif;
 	font-size: 16px;
 	height: 48px;
@@ -12,13 +13,20 @@
 	line-height: 24px;
 	max-width: 100%;
 	padding: 0 25px;
-	position: relative;
-	text-align: center;
 	text-decoration: none;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
+	outline: 0;
+	color: #111;
 }
+
+button.ripple {
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	transform: scale(0);
+	animation: ripple 0.6s linear;
+  }
 
 .main:after {
 	background-color: #111;
@@ -40,7 +48,7 @@
 }
 	
 .main:active {
-	background-color: #09B4EE;
+	background-color: #00b4d8;
 	outline: 0;
 }
 	
@@ -50,28 +58,30 @@
 
 .primary{
 	color: #111;
-	background-color: #2380DC;
+	background-color: #0077b6;
 } 
 .secondary{
 	color: #111;
 	background-color: #A5C9E0;
 } 
-.large{
-	color: #111;
-	background-color: #fee6e3;
-} 
-.small{
-
-} 
 .warning{
-
+	background-color: #ffd60a;
+	color: #111;
 } 
-.danger{
-
+.dark{
+	background-color: #0077b6;
+	color: #111;
 }
 	
 @media (min-width: 768px) {
 	.main {
-	padding: 0 40px;
+		padding: 0 40px;
 	}
 }
+
+@keyframes ripple {
+	to {
+	  transform: scale(2.5);
+	  opacity: 0;
+	}
+  }

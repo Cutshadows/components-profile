@@ -1,0 +1,47 @@
+.container {
+	display: flex;
+}
+.group {
+	cursor: pointer;
+	justify-content: center;
+	width: 4rem;
+}
+
+.group:hover  {
+	background-color: #8b5cf6;
+	box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+	border-radius: 0.5rem;
+	margin-left: 0.25rem; /* 4px */
+	margin-right: 0.25rem; /* 4px */
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+}
+
+.card-date {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}
+
+.card-text {
+	text-align: center;
+}
+
+.paragraph{
+	color: rgb(17 24 39);
+	font-size: 1.2rem; /* 14px */
+	line-height: 1.25rem; /* 20px */
+}
+
+.paragraph-date {
+	margin-top: .75rem;
+}
+
+.group:hover .paragraph {
+	color: rgb(243 244 246);
+}
+
+.group:hover .paragraph-date {
+	font-weight: 700;
+}
