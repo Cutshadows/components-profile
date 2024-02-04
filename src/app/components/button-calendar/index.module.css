@@ -7,16 +7,18 @@
 	width: 4rem;
 }
 
-.group:hover  {
+.group:hover, .active  {
 	background-color: #8b5cf6;
 	box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
 	border-radius: 0.5rem;
-	margin-left: 0.25rem; /* 4px */
-	margin-right: 0.25rem; /* 4px */
+	margin-left: 0.25rem; 
+	margin-right: 0.25rem; 
 	transition-property: all;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 300ms;
 }
+
+
 
 .card-date {
 	display: flex;
@@ -42,6 +44,18 @@
 	color: rgb(243 244 246);
 }
 
+.group:hover :global(span) {
+	opacity: 2.75;
+}
+
 .group:hover .paragraph-date {
+	font-weight: 700;
+}
+
+.active :global(p){
+	color: white;
+}
+
+.active :global(p:nth-child(2)){
 	font-weight: 700;
 }
