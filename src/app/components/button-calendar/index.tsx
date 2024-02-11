@@ -1,14 +1,29 @@
 
 
+import React from 'react';
 import { dateNow, dayNames } from '../../utils/dates.utils';
 import Badge from '../badge-pointer';
 import styles from './index.module.css';
 
-const BtnCalendar = ({ date }:{date: Date}) => {
+type BtnCalendarProps = {
+	onClick: (event: React.MouseEvent<HTMLButtonElement> | Date) => void;
+	type?: 'submit' | 'button';
+	date: Date;
+	isActive: boolean;
+}
+
+const BtnCalendar: React.FC<BtnCalendarProps> = React.forwardRef(({onClick, type, date, isActive }, ref) => {
+	const onChangeDay = (date: Date) => {
+		onClick(date);
+	}
+	
 	return (
-		<div className={`${styles.container} ${styles.group}  ${dateNow.getUTCDay() === date.getUTCDay() && styles.active}`}>
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		<button ref={ref as any} onClick={()=>onChangeDay(date)} 
+			type={type} 
+			className={`${styles.container} ${styles.group}  ${  isActive && styles.active}`}>
 			{date.getUTCDate() === dateNow.getUTCDate() && (
-				<Badge />
+				<Badge active={isActive} />
 			)}
 			<div className={`${styles['card-date']}`}>
 				<div className={`${styles['card-text']}`}>
@@ -16,8 +31,8 @@ const BtnCalendar = ({ date }:{date: Date}) => {
 					<p className={`${styles.paragraph} ${styles['paragraph-date']}`}>{date.getDate()}</p>
 				</div>
 			</div>
-		</div>
+		</button>
 	)
-}
+})
 
 export default BtnCalendar;

@@ -4,9 +4,10 @@ import btn from './index.module.css';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant: 'primary' | 'secondary' | 'warning' | 'dark';
 	label?: string;
+	onClick: (event: React.MouseEvent<HTMLButtonElement> | MouseEvent)=> void;
 }
 
-const Button: FC<ButtonProps> = ({ label, variant = 'primary', ...config }) => {
+const Button: FC<ButtonProps> = ({ label, variant = 'primary', onClick, ...config }) => {
 	const classConfiguration = `${btn.main} ${btn[variant]}`;
 	const createRipple = (button: HTMLButtonElement, event: React.MouseEvent<HTMLButtonElement> | MouseEvent) => {
 		const circle = document.createElement('span');
@@ -24,6 +25,7 @@ const Button: FC<ButtonProps> = ({ label, variant = 'primary', ...config }) => {
 		}
 
 		button.appendChild(circle);
+		onClick(event)
 	};
 
 	return (

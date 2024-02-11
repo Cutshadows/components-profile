@@ -1,20 +1,57 @@
 import React from 'react';
 import BtnCalendar from '../button-calendar';
 import styles from './index.module.css';
-import { getCurrentWeek, prevNextWeek } from '../../utils/dates.utils';
+import { dateNow, getCurrentWeek, prevNextWeek} from '../../utils/dates.utils';
+import { Button } from '..';
 
+type CalendarProps = {
+	onClick: (day: Date)=> void;
+	prevDate: () => void;
+	nexDate: () => void;
+};
 
-const Calendar = () => {
-	const [currentWeek, setCurrentWeek] = React.useState(getCurrentWeek());
+const Calendar: React.FC<CalendarProps> = (props) => {
+	const [activeDay, setActiveDay] = React.useState(dateNow.getUTCDay());
+	const [currentWeek, setCurrentWeek] = React.useState<Date[]>([]);
+	const [week, setCountWeek] = React.useState(0);
+	const buttonRef = React.useRef<HTMLButtonElement>(null); 
 
+	const handlePrevWeek = () => {
+		setCountWeek(week + 7);
+	}
+
+	const handleNextWeek = () => {
+		setCountWeek(week - 7);
+	}
+	React.useEffect(()=> {
+		setCurrentWeek(getCurrentWeek());
+	}, [])
+
+	React.useEffect(()=> {
+		console.log(week);
+		console.log(prevNextWeek(week));
+		setCurrentWeek(prevNextWeek(week));
+	}, [week])
+
+	const onClickGetDate = (e: Date) => {
+		setActiveDay(e.getUTCDay());
+		props.onClick(e)
+	}
 
 	return (
 		<div className={styles.main}>
+			<Button label="NEXT" variant="primary" onClick={handleNextWeek}>next</Button>
 			<div className={styles.container}>
 				{currentWeek.map(date=> (
-					<BtnCalendar date={date} />
+					<BtnCalendar
+						isActive={activeDay === date.getUTCDay()} 
+						ref={buttonRef} 
+						key={date.getTime()} 
+						onClick={(e)=>onClickGetDate(e as Date)} 
+						date={date} />
 				))}
 			</div>
+			<Button label="PREV" variant="primary" onClick={handlePrevWeek}>PREV</Button>
 			{/* <div className='flex bg-white shadow-md justify-start md:justify-center rounded-lg overflow-x-scroll mx-auto py-4 px-2  md:mx-12'>
 
 				<div className='flex group hover:bg-purple-100 hover:shadow-lg hover-light-shadow rounded-lg mx-1 transition-all	duration-300	 cursor-pointer justify-center w-16'>

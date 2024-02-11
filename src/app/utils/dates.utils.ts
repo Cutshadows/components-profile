@@ -1,5 +1,5 @@
 
-export const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+export const dayNames = ['Sunday','Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', ];
 export const dateNow = new Date();
 
 export const getCurrentWeek = ():Date[]=> {
@@ -18,13 +18,13 @@ export const getCurrentWeek = ():Date[]=> {
 	return currentWeek
 }
 
-export const prevNextWeek = (): Date[] =>{
+export const prevNextWeek = (numberWeek: number): Date[] =>{
 	const currentDate:Date = new Date();
 	const currentDayOfWeek:number = currentDate.getDay();
 	const daysUntilMonday = (currentDayOfWeek + 6) % 7;
 	const startDate: Date = new Date(currentDate);
 	// TODO: don't forget change this
-	startDate.setDate(currentDate.getDate() - daysUntilMonday - 14);
+	startDate.setDate(currentDate.getDate() - daysUntilMonday - numberWeek);
 	return daysOfWeek(startDate);
 
 } 

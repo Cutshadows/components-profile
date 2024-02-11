@@ -30,17 +30,17 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-	"test": "jest -- src/app/ --watch-extensions ts,tsx",
-	"test:watch": "jest --watch -- src/app/ --watch-extensions ts,tsx",
-	"test:ci": "jest --coverage -- src/app/ --watch-extensions ts,tsx",
-	"test:update": "jest --updateSnapshot",
-	"format": "prettier --write ./src/app/**/*.{ts,tsx}",
-	"check-format": "prettier --check ./src/app/**/*.{ts,tsx}",
+    "test": "jest -- src/app/ --watch-extensions ts,tsx",
+    "test:watch": "jest --watch -- src/app/ --watch-extensions ts,tsx",
+    "test:ci": "jest --coverage -- src/app/ --watch-extensions ts,tsx",
+    "test:update": "jest --updateSnapshot",
+    "format": "prettier --write ./src/app/**/*.{ts,tsx}",
+    "check-format": "prettier --check ./src/app/**/*.{ts,tsx}",
     "build-storybook": "storybook build"
   },
   "lint-staged": {
-	"**/*": "prettier --write --ignore-unknown"
-},
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
@@ -64,14 +64,14 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.8",
-    "@storybook/addon-interactions": "^7.6.8",
-    "@storybook/addon-links": "^7.6.8",
+    "@storybook/addon-essentials": "^8.0.0-beta.2",
+    "@storybook/addon-interactions": "^8.0.0-beta.2",
+    "@storybook/addon-links": "^8.0.0-beta.2",
     "@storybook/addon-onboarding": "^1.0.10",
-    "@storybook/blocks": "^7.6.8",
-    "@storybook/react": "^7.6.8",
-    "@storybook/react-vite": "^7.6.8",
-    "@storybook/test": "^7.6.8",
+    "@storybook/blocks": "^8.0.0-beta.2",
+    "@storybook/react": "^8.0.0-beta.2",
+    "@storybook/react-vite": "^8.0.0-beta.2",
+    "@storybook/test": "^8.0.0-beta.2",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
@@ -85,18 +85,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.6.15",
-    "storybook": "^7.6.8",
+    "storybook": "^8.0.0-beta.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-	"eslint-config-prettier": "^8.3.0",
-	"eslint-plugin-prettier": "^3.4.0",
-	"prettier": "^2.3.2",
-	"babel-jest": "^27.4.5",
-	"jest": "^27.4.5",
-	"jest-environment-jsdom": "^27.5.1",
-	"jest-styled-components": "^7.0.8",
-	"ts-jest": "^27.1.2"
-
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "babel-jest": "^27.4.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^27.5.1",
+    "jest-styled-components": "^7.0.8",
+    "ts-jest": "^27.1.2"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",

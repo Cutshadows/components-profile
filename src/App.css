@@ -16,5 +16,21 @@
 		principal colors
 	**/
 	--main-background-color: rgb(243 244 246);
+	--main-active-background-color: rgb(30,153,229); //#1e88e5
 	--secondary-background-color: #fff;
+	
+	--animation-point-ping: cubic-bezier(1, 0, .2, 3) infinite;
+	--text-color-global-primary: #fff;
+
+	--text-color-paragraph: rgb(17 24 39);
+	--text-color-base: rgb(243 244 246);
+
+
+	/** COLOR BASE POINTERS **/
+	--color-background-base-point: rgb(250 232 255);
+	--color-background-secondary-point: rgb(25,126,215);
+	--color-background-pointer-ping: rgb(188,220,247); 
+
+	/** CARD ADD ROASTER **/
+	--bg-card-roaster-color: rgb(243 244 246);
 }

@@ -1,3 +1,7 @@
+button {
+	background-color: initial;
+	border: initial;
+}
 .container {
 	display: flex;
 }
@@ -6,9 +10,20 @@
 	justify-content: center;
 	width: 4rem;
 }
+.active {
+	background-color: var(--main-active-background-color);
+	box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+	border-radius: 0.5rem;
+	margin-left: 0.25rem; 
+	margin-right: 0.25rem; 
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+}
 
-.group:hover, .active  {
-	background-color: #8b5cf6;
+
+.group:hover  {
+	background-color: var(--main-active-background-color);
 	box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
 	border-radius: 0.5rem;
 	margin-left: 0.25rem; 
@@ -31,9 +46,9 @@
 }
 
 .paragraph{
-	color: rgb(17 24 39);
-	font-size: 1.2rem; /* 14px */
-	line-height: 1.25rem; /* 20px */
+	color: var(--text-color-paragraph);
+	font-size: 1.2rem; 
+	line-height: 1.25rem;
 }
 
 .paragraph-date {
@@ -41,7 +56,7 @@
 }
 
 .group:hover .paragraph {
-	color: rgb(243 244 246);
+	color: var(--text-color-global-primary)
 }
 
 .group:hover :global(span) {
@@ -53,7 +68,7 @@
 }
 
 .active :global(p){
-	color: white;
+	color: var(--text-color-base);
 }
 
 .active :global(p:nth-child(2)){
