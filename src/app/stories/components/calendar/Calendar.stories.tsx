@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as DocBlock from '@storybook/blocks';
 
-import { Calendar } from '../../../components';
+import { Calendar } from '../../../../components';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -36,9 +36,14 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Preview: Story = {
+	args: {
+		onClick: (day)=> {return day},
+		prevDate: ()=> {return},
+		nexDate: ()=> {return}
+	}
 //   args: {
-//     // variant: 'primary',
-//     // label: 'Button',
+//     variant: 'primary',
+//     label: 'Button',
 //   },
 };
 

@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { dateNow, dayNames } from '../../utils/dates.utils';
+import { dateNow, dayNames } from '../../app/utils/dates.utils';
 import Badge from '../badge-pointer';
 import styles from './index.module.css';
 
@@ -10,6 +10,7 @@ type BtnCalendarProps = {
 	type?: 'submit' | 'button';
 	date: Date;
 	isActive: boolean;
+	ref: React.Ref<HTMLButtonElement>;
 }
 
 const BtnCalendar: React.FC<BtnCalendarProps> = React.forwardRef(({onClick, type, date, isActive }, ref) => {

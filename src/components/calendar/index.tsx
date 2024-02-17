@@ -1,7 +1,7 @@
 import React from 'react';
 import BtnCalendar from '../button-calendar';
 import styles from './index.module.css';
-import { dateNow, getCurrentWeek, prevNextWeek} from '../../utils/dates.utils';
+import { dateNow, getCurrentWeek, prevNextWeek} from '../../app/utils/dates.utils';
 import { Button } from '..';
 
 type CalendarProps = {

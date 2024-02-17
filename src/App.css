@@ -12,11 +12,10 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	/**
-		principal colors
-	**/
+    /* principal colors */
 	--main-background-color: rgb(243 244 246);
-	--main-active-background-color: rgb(30,153,229); //#1e88e5
+	--main-active-background-color: rgb(30,153,229);
+	/* #1e88e5 */
 	--secondary-background-color: #fff;
 	
 	--animation-point-ping: cubic-bezier(1, 0, .2, 3) infinite;
@@ -26,11 +25,15 @@
 	--text-color-base: rgb(243 244 246);
 
 
-	/** COLOR BASE POINTERS **/
+	/* COLOR BASE POINTERS */
 	--color-background-base-point: rgb(250 232 255);
 	--color-background-secondary-point: rgb(25,126,215);
 	--color-background-pointer-ping: rgb(188,220,247); 
 
-	/** CARD ADD ROASTER **/
+	/* CARD ADD ROASTER */
 	--bg-card-roaster-color: rgb(243 244 246);
+	--text-color-btn-plus: rgb(156 163 175); 
+	--text-color-secondary: rgb(107 114 128);
+	--text-color-principal: rgb(75 85 99); 
+	/* text-gray 400 500 and 600 */
 }
