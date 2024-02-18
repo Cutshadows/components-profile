@@ -1,0 +1,105 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: fit-content;
+	border-radius: 6px;
+	padding: 8px;
+  }
+  
+  .container[data-variant="rounded-edge-box"] {
+	background: #e1f0ff;
+  }
+  
+  .container[data-variant="tag"] {
+	background: var(--components-ui-color-light);
+  }
+  
+  .i {
+	display: inline-block;
+  }
+  
+  .i[data-animation="rotate"] {
+	-webkit-animation: rotating 2s linear infinite;
+	-moz-animation: rotating 2s linear infinite;
+	-ms-animation: rotating 2s linear infinite;
+	-o-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;
+  }
+  
+  
+  @keyframes rotating {
+  from {
+	  -ms-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -webkit-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+  }
+  to {
+	  -ms-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -webkit-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+  }
+  }
+
+
+.storiesDisplayIcons {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto;
+	text-align: center;
+	gap: 0.5rem;
+  }
+  
+  .i[data-animation="asc"]{
+	  -webkit-animation: ascending var(--components-ui-animation-arrow-table-sort);
+	  -moz-animation: ascending var(--components-ui-animation-arrow-table-sort);
+	  -ms-animation: ascending var(--components-ui-animation-arrow-table-sort);
+	  -o-animation: ascending var(--components-ui-animation-arrow-table-sort);
+	  transform: var(--components-ui-rotate-one-eight-zero);
+	  animation: ascending var(--components-ui-animation-arrow-table-sort);
+  }
+  .i[data-animation="desc"]{
+	  -webkit-animation: descending var(--components-ui-animation-arrow-table-sort);
+	  -moz-animation: descending var(--components-ui-animation-arrow-table-sort);
+	  -ms-animation: descending var(--components-ui-animation-arrow-table-sort);
+	  -o-animation: descending var(--components-ui-animation-arrow-table-sort);
+	  transform: var(--components-ui-rotate-zero);
+	  animation: descending var(--components-ui-animation-arrow-table-sort);
+  }
+  @keyframes descending {
+	  from {
+		  -ms-transform: var(--components-ui-rotate-one-eight-zero);
+		  -moz-transform: var(--components-ui-rotate-one-eight-zero);
+		  -webkit-transform: var(--components-ui-rotate-one-eight-zero);
+		  -o-transform: var(--components-ui-rotate-one-eight-zero);
+		  transform: var(--components-ui-rotate-one-eight-zero);
+	  }
+	   
+	  to{
+		  -ms-transform: var(--components-ui-rotate-zero);
+		  -moz-transform: var(--components-ui-rotate-zero);
+		  -webkit-transform: var(--components-ui-rotate-zero);
+		  -o-transform: var(--components-ui-rotate-zero);
+		  transform: var(--components-ui-rotate-zero);
+	  }
+  }
+  @keyframes ascending {
+	  from {
+		  -ms-transform: var(--components-ui-rotate-zero);
+		  -moz-transform: var(--components-ui-rotate-zero);
+		  -webkit-transform: var(--components-ui-rotate-zero);
+		  -o-transform: var(--components-ui-rotate-zero);
+		  transform: var(--components-ui-rotate-zero);
+	  }
+	  to {
+		  -ms-transform: var(--components-ui-rotate-one-eight-zero);
+		  -moz-transform: var(--components-ui-rotate-one-eight-zero);
+		  -webkit-transform: var(--components-ui-rotate-one-eight-zero);
+		  -o-transform: var(--components-ui-rotate-one-eight-zero);
+		  transform: var(--components-ui-rotate-one-eight-zero);
+	  }
+  }
+  

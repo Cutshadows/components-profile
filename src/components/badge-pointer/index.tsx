@@ -1,6 +1,10 @@
 import styles from './index.module.css';
-const Badge = ({active}: {active: boolean}) => {
-	console.log({active})
+
+export type BadgeProps = {
+	active: boolean;
+}
+
+const Badge = ({active}: BadgeProps) => {
 	return (
 		<span className={styles.container}>
 			<span className={styles.ping}></span>

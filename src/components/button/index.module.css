@@ -6,7 +6,7 @@
 	border-radius: 8px;
 	box-sizing: border-box;
 	cursor: pointer;
-	font-family: Inter,sans-serif;
+	font-family: Inter, sans-serif;
 	font-size: 16px;
 	height: 48px;
 	justify-content: center;
@@ -26,12 +26,12 @@ button.ripple {
 	position: absolute;
 	transform: scale(0);
 	animation: ripple 0.6s linear;
-  }
+}
 
 .main:after {
 	background-color: #111;
 	border-radius: 8px;
-	content: "";
+	content: '';
 	display: block;
 	height: 48px;
 	left: 0;
@@ -39,40 +39,111 @@ button.ripple {
 	position: absolute;
 	top: -2px;
 	transform: translate(8px, 8px);
-	transition: transform .2s ease-out;
+	transition: transform 0.2s ease-out;
 	z-index: -1;
 }
-	
+
 .main:hover:after {
 	transform: translate(0, 0);
 }
-	
+
 .main:active {
 	background-color: #00b4d8;
 	outline: 0;
 }
-	
+
 .main:hover {
 	outline: 0;
 }
 
-.primary{
+.primary {
 	color: #111;
-	background-color: #0077b6;
-} 
-.secondary{
+	background-color: var(--main-active-background-color);
+}
+.secondary {
 	color: #111;
-	background-color: #A5C9E0;
-} 
-.warning{
+	background-color: #a5c9e0;
+}
+.warning {
 	background-color: #ffd60a;
 	color: #111;
-} 
-.dark{
+}
+.dark {
 	background-color: #0077b6;
 	color: #111;
 }
-	
+
+.button[data-size='l'][data-icon='true'] {
+	padding-right: 14.5px;
+	padding-left: 14.5px;
+}
+
+.button > * {
+	pointer-events: none;
+}
+
+.button > .iconLeft {
+	position: absolute;
+	left: 8px;
+}
+
+.button[data-size='l'] .iconLeft {
+	position: absolute;
+	left: 10px;
+}
+
+.button > .iconRight {
+	position: absolute;
+	right: 8px;
+}
+
+.button[data-size='l'] .iconRight {
+	position: absolute;
+	right: 10px;
+}
+
+.button[data-icon-left='true'] {
+	padding-left: 35px;
+}
+
+.button[data-icon-left='true'][data-size='xs'] {
+	padding-left: 30px;
+}
+
+.button[data-size='m'][data-icon-left='true'] {
+	padding-left: 40px;
+}
+
+.button[data-size='l'][data-icon-left='true'] {
+	padding-left: 43px;
+}
+
+.button[data-icon-right='true'] {
+	padding-right: 35px;
+}
+
+.button[data-icon-right='true'][data-size='xs'] {
+	padding-right: 30px;
+}
+
+.button[data-size='m'][data-icon='true'] {
+	padding-right: 12px;
+	padding-left: 12px;
+}
+
+.button[data-size='m'][data-icon-right='true'] {
+	padding-right: 40px;
+}
+
+.button[data-size='l'][data-icon-right='true'] {
+	padding-right: 43px;
+}
+
+.button[data-size='l'][data-icon='true'] {
+	padding-right: 14.5px;
+	padding-left: 14.5px;
+}
+
 @media (min-width: 768px) {
 	.main {
 		padding: 0 40px;
@@ -81,7 +152,7 @@ button.ripple {
 
 @keyframes ripple {
 	to {
-	  transform: scale(2.5);
-	  opacity: 0;
+		transform: scale(2.5);
+		opacity: 0;
 	}
-  }
+}

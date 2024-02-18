@@ -23,4 +23,10 @@
 	position: relative;
 }
 
+button:nth-child(3n+1){
+	height: 30vh;
+}
 
+button:nth-child(3n){
+	height: 30vh;
+}

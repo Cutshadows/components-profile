@@ -5,7 +5,7 @@ import { dateNow, dayNames } from '../../app/utils/dates.utils';
 import Badge from '../badge-pointer';
 import styles from './index.module.css';
 
-type BtnCalendarProps = {
+export type BtnCalendarProps = {
 	onClick: (event: React.MouseEvent<HTMLButtonElement> | Date) => void;
 	type?: 'submit' | 'button';
 	date: Date;

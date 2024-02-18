@@ -2,12 +2,12 @@ import React from 'react';
 import BtnCalendar from '../button-calendar';
 import styles from './index.module.css';
 import { dateNow, getCurrentWeek, prevNextWeek} from '../../app/utils/dates.utils';
-import { Button } from '..';
+import { Button, Icon } from '..';
 
-type CalendarProps = {
+export type CalendarProps = {
 	onClick: (day: Date)=> void;
-	prevDate: () => void;
-	nexDate: () => void;
+	prevDate: (week:Date[]) => void;
+	nexDate: (week:Date[]) => void;
 };
 
 const Calendar: React.FC<CalendarProps> = (props) => {
@@ -18,18 +18,18 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 
 	const handlePrevWeek = () => {
 		setCountWeek(week + 7);
+		props.prevDate(currentWeek);
 	}
 
 	const handleNextWeek = () => {
 		setCountWeek(week - 7);
+		props.prevDate(currentWeek);
 	}
 	React.useEffect(()=> {
 		setCurrentWeek(getCurrentWeek());
 	}, [])
 
 	React.useEffect(()=> {
-		console.log(week);
-		console.log(prevNextWeek(week));
 		setCurrentWeek(prevNextWeek(week));
 	}, [week])
 
@@ -38,10 +38,11 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 		props.onClick(e)
 	}
 
+
 	return (
 		<div className={styles.main}>
-			<Button label="NEXT" variant="primary" onClick={handleNextWeek}>next</Button>
 			<div className={styles.container}>
+			<Button icon={<Icon name="ArrowLeftOutline" size={48} />} size='l' variant="primary" onClick={handlePrevWeek} />
 				{currentWeek.map(date=> (
 					<BtnCalendar
 						isActive={activeDay === date.getUTCDay()} 
@@ -50,8 +51,8 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 						onClick={(e)=>onClickGetDate(e as Date)} 
 						date={date} />
 				))}
+			<Button icon={<Icon name="ArrowRightOutline" size={148} />} size='l' variant="primary" onClick={handleNextWeek} />
 			</div>
-			<Button label="PREV" variant="primary" onClick={handlePrevWeek}>PREV</Button>
 			{/* <div className='flex bg-white shadow-md justify-start md:justify-center rounded-lg overflow-x-scroll mx-auto py-4 px-2  md:mx-12'>
 
 				<div className='flex group hover:bg-purple-100 hover:shadow-lg hover-light-shadow rounded-lg mx-1 transition-all	duration-300	 cursor-pointer justify-center w-16'>
