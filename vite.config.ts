@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
-// import dts from 'vite-plugin-dts';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   build: {
     lib: {
       entry: 'src/components/index.ts',
-      name: 'components',
+      name: 'common-components-test',
       formats: ['umd', 'cjs', 'es'],
     },
     rollupOptions: {
@@ -18,14 +18,14 @@ export default defineConfig({
       },
     },
   },
-//   plugins: [
-//     dts({
-//       insertTypesEntry: true,
-//     }),
-//   ],
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
   css: {
     modules: {
-      generateScopedName: 'components-ui__[name]__[local]___[hash:base64:5]',
+      generateScopedName: 'common-components-test__[name]__[local]___[hash:base64:5]',
     },
   },
 });

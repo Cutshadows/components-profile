@@ -1,10 +1,10 @@
 {
   "name": "common-components-test",
   "version": "0.1.0",
+  "type": "module",
   "private": false,
   "license": "MIT",
-  "typings": "dis/index.d.ts",
-  "main": "dist/index.js",
+  "main": "dist/common-components-test.cjs",
   "homepage": "https://my-personal-profile-black.vercel.app/",
   "repository": {
     "url": "https://github.com/Cutshadows/my-storybook",
@@ -16,8 +16,7 @@
     ]
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -29,14 +28,15 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-	"buildsb": "storybook build",
+    "buildsb": "storybook build",
     "storybook": "storybook dev -p 6006 --ci --no-open",
     "test": "jest -- src/app/ --watch-extensions ts,tsx",
     "test:watch": "jest --watch -- src/app/ --watch-extensions ts,tsx",
     "test:ci": "jest --coverage -- src/app/ --watch-extensions ts,tsx",
     "test:update": "jest --updateSnapshot",
     "format": "prettier --write ./src/app/**/*.{ts,tsx}",
-    "check-format": "prettier --check ./src/app/**/*.{ts,tsx}"
+    "check-format": "prettier --check ./src/app/**/*.{ts,tsx}",
+    "vitest-cover": "vitest run --coverage"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -96,7 +96,8 @@
     "storybook": "^8.0.0-beta.3",
     "ts-jest": "^27.1.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.12"
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^2.3.0"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
@@ -105,5 +106,7 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "module": "dist/common-components-test.js",
+  "types": "dist/index.d.ts"
 }
