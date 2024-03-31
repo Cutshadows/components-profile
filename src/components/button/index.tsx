@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<ButtonProps> = ({ label, variant = 'primary', onClick, icon, size= 's', ...config }) => {
-	const classConfiguration = `${styles.main} ${styles[variant]}`;
+	const classConfiguration = `${styles.button}`;
 	const getIconSize = () => {
 		if (size === 'xs') return 16;
 		if (size === 'm') return 24;

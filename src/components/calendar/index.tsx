@@ -42,7 +42,9 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 	return (
 		<div className={styles.main}>
 			<div className={styles.container}>
-			<Button icon={<Icon name="ArrowLeftOutline" size={48} />} size='l' variant="primary" onClick={handlePrevWeek} />
+				<div className={styles['side-prev']}>
+					<Button  icon={<Icon name="ArrowLeftOutline" size={48} />} size='m' variant="primary" onClick={handlePrevWeek} />
+				</div>
 				{currentWeek.map(date=> (
 					<BtnCalendar
 						isActive={activeDay === date.getUTCDay()} 
@@ -51,7 +53,9 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 						onClick={(e)=>onClickGetDate(e as Date)} 
 						date={date} />
 				))}
-			<Button icon={<Icon name="ArrowRightOutline" size={148} />} size='l' variant="primary" onClick={handleNextWeek} />
+				<div  className={styles['side-next']}>
+					<Button icon={<Icon name="ArrowRightOutline" size={58} />} size='m' variant="primary" onClick={handleNextWeek} />
+				</div>
 			</div>
 			{/* <div className='flex bg-white shadow-md justify-start md:justify-center rounded-lg overflow-x-scroll mx-auto py-4 px-2  md:mx-12'>
 

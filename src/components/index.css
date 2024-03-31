@@ -36,4 +36,12 @@
 	--text-color-secondary: rgb(107 114 128);
 	--text-color-principal: rgb(75 85 99); 
 	/* text-gray 400 500 and 600 */
+
+	--components-ui-border-radius2: 8px;
+    --components-ui-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	--components-ui-transition: ease all 0.2s;
+	/* definition color btns */
+	--components-btn-color-primary: #48bfe3;
+	--components-btn-color-secondary: #a9d6e5;
+	--components-btn-color-warning: #ffd500;
 }
