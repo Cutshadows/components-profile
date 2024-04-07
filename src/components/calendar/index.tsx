@@ -11,7 +11,7 @@ export type CalendarProps = {
 };
 
 const Calendar: React.FC<CalendarProps> = (props) => {
-	const [activeDay, setActiveDay] = React.useState(dateNow.getUTCDay());
+	const [activeDay, setActiveDay] = React.useState(dateNow.toLocaleDateString());
 	const [currentWeek, setCurrentWeek] = React.useState<Date[]>([]);
 	const [week, setCountWeek] = React.useState(0);
 	const buttonRef = React.useRef<HTMLButtonElement>(null); 
@@ -34,10 +34,9 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 	}, [week])
 
 	const onClickGetDate = (e: Date) => {
-		setActiveDay(e.getUTCDay());
+		setActiveDay(e.toLocaleDateString());
 		props.onClick(e)
 	}
-
 
 	return (
 		<div className={styles.main}>
@@ -47,7 +46,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 				</div>
 				{currentWeek.map(date=> (
 					<BtnCalendar
-						isActive={activeDay === date.getUTCDay()} 
+						isActive={activeDay === date.toLocaleDateString()} 
 						ref={buttonRef} 
 						key={date.getTime()} 
 						onClick={(e)=>onClickGetDate(e as Date)} 

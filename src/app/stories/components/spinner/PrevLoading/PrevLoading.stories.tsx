@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as DocBlock from '@storybook/blocks';
+import { PrevLoading } from '../../../../../components';
 
-import { InitialCard } from '../../../../../components';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-	title: 'components/Cards/Initial',
-	component: InitialCard,
+	title: 'components/Spinner/PrevLoading',
+	component: PrevLoading,
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	tags: ['autodocs'],
 	// More on argTypes: https://storybook.js.org/docs/api/argtypes
@@ -29,18 +29,17 @@ const meta = {
 			),
 		}
 	}
-} satisfies Meta<typeof InitialCard>;
+} satisfies Meta<typeof PrevLoading>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Preview: Story = {
-  args: {
+//   args: {
 //     // variant: 'primary',
-    onClick: ()=>{console.log('click')},
-	draggable: true
-  },
+//     // label: 'Button',
+//   },
 };
 
 // export const Secondary: Story = {

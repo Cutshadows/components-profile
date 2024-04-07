@@ -23,7 +23,7 @@ const BtnCalendar: React.FC<BtnCalendarProps> = React.forwardRef(({onClick, type
 		<button ref={ref as any} onClick={()=>onChangeDay(date)} 
 			type={type} 
 			className={`${styles.container} ${styles.group}  ${  isActive && styles.active}`}>
-			{date.getUTCDate() === dateNow.getUTCDate() && (
+			{date.toLocaleDateString() === dateNow.toLocaleDateString() && (
 				<Badge active={isActive} />
 			)}
 			<div className={`${styles['card-date']}`}>

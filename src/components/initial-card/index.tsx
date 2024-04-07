@@ -1,6 +1,6 @@
 
 import style from './index.module.css';
-import { drag } from '../../app/utils/drag.utils';
+import { allowDrop, drag, drop } from '../../app/utils/drag.utils';
 
 
 export type InitialCardProps = {
@@ -12,7 +12,7 @@ const InitialCard = (props : InitialCardProps) => {
 
   return (
 	<>
-		{/* <div id="div1" className={style.div1} onDrop={(event)=>drop(event)} onDragOver={(event)=>allowDrop(event)}> */}
+		<div id="div1" className={style.div1} onDrop={(event)=>drop(event)} onDragOver={(event)=>allowDrop(event)}>
 			<div 
 				className={style.card} 
 				id="schedule-user" 
@@ -27,10 +27,10 @@ const InitialCard = (props : InitialCardProps) => {
 							<span className={style['secondary-text']}>(or click to select)</span>
 						</label>
 				</div>
-		{/* </div>
+		</div>
 
 		<div id="div2" className={style.div2} onDrop={(event)=>drop(event)} onDragOver={(event)=>allowDrop(event)}>
-		</div>	 */}
+		</div>	
 	</>
   )
 }
