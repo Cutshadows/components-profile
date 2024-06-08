@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { dateNow, dayNames } from '../../app/utils/dates.utils';
 import Badge from '../badge-pointer';
@@ -13,7 +11,7 @@ export type BtnCalendarProps = {
 	ref: React.Ref<HTMLButtonElement>;
 }
 
-const BtnCalendar: React.FC<BtnCalendarProps> = React.forwardRef(({onClick, type, date, isActive }, ref) => {
+const BtnCalendar: React.FC<any & BtnCalendarProps> = React.forwardRef(({onClick, type, date, isActive }, ref) => {
 	const onChangeDay = (date: Date) => {
 		onClick(date);
 	}

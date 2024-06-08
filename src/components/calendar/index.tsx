@@ -49,7 +49,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 						isActive={activeDay === date.toLocaleDateString()} 
 						ref={buttonRef} 
 						key={date.getTime()} 
-						onClick={(e)=>onClickGetDate(e as Date)} 
+						onClick={(e: Date)=>onClickGetDate(e as Date)} 
 						date={date} />
 				))}
 				<div  className={styles['side-next']}>
