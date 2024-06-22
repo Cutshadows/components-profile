@@ -2,6 +2,10 @@ import React from 'react';
 import { dateNow, dayNames } from '../../app/utils/dates.utils';
 import Badge from '../badge-pointer';
 import styles from './index.module.css';
+import Button from '../button';
+
+// Define a type for the ref. Assuming it's a button ref:
+type Ref = React.RefObject<HTMLButtonElement>;
 
 export type BtnCalendarProps = {
 	onClick: (event: React.MouseEvent<HTMLButtonElement> | Date) => void;
@@ -11,16 +15,21 @@ export type BtnCalendarProps = {
 	ref: React.Ref<HTMLButtonElement>;
 }
 
-const BtnCalendar: React.FC<any & BtnCalendarProps> = React.forwardRef(({onClick, type, date, isActive }, ref) => {
+// eslint-disable-next-line react-refresh/only-export-components
+const BtnCalendar: React.ForwardRefRenderFunction<Ref, BtnCalendarProps> = ({onClick, type, date, isActive }, ref) => {
 	const onChangeDay = (date: Date) => {
 		onClick(date);
 	}
 	
+	const attibutes = {
+		ref,
+		onClick: () => onChangeDay(date),
+		type: type || 'button',
+		className: `${styles.container} ${styles.group}  ${  isActive && styles.active}`
+	}
+
 	return (
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		<button ref={ref as any} onClick={()=>onChangeDay(date)} 
-			type={type} 
-			className={`${styles.container} ${styles.group}  ${  isActive && styles.active}`}>
+		<Button attributes={attibutes} >
 			{date.toLocaleDateString() === dateNow.toLocaleDateString() && (
 				<Badge active={isActive} />
 			)}
@@ -30,8 +39,9 @@ const BtnCalendar: React.FC<any & BtnCalendarProps> = React.forwardRef(({onClick
 					<p className={`${styles.paragraph} ${styles['paragraph-date']}`}>{date.getDate()}</p>
 				</div>
 			</div>
-		</button>
+		</Button>
 	)
-})
+};
 
-export default BtnCalendar;
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.forwardRef(BtnCalendar);
