@@ -1,5 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button > renders the correct text 1`] = `null`;
-
-exports[`ButtonSite > renders the correct text 1`] = `null`;
