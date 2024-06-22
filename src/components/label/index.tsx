@@ -1,5 +1,7 @@
-const Label = () => {
-	return <button />;
+const Label = ({text}: {text: string}) => {
+	return <>
+		<label>{text}</label>
+	</>;
 };
 
 export default Label;

@@ -23,7 +23,7 @@ module.exports = {
 	transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 	testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-	// setupFilesAfterEnv: ['<rootDir>/setup-jest.js'],
+	setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 	// moduleNameMapper: {
 	// 	'^axios$': require.resolve('axios'),
 	// },

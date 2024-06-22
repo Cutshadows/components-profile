@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '../../../../components';
+import { ButtonRipple } from '../../../../components';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'components/Button',
-  component: Button,
+  title: 'components/ButtonRipple',
+  component: ButtonRipple,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -15,7 +15,7 @@ const meta = {
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof ButtonRipple>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
