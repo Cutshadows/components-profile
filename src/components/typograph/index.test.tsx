@@ -11,6 +11,15 @@ describe('Typograph', () => {
 		expect(getByText('Hello World')).toBeInTheDocument();
 	});
 
+	it('renders the correct text', () => {
+		const { getByText } = render(
+			<Typograph variant="p" applyDefaultStyles={true}>
+				Hello World
+			</Typograph>
+		);
+		expect(getByText('Hello World')).toMatchSnapshot();
+	});
+
 	it('applies the specified variant component', () => {
 		const { container } = render(
 			<Typograph variant="h1" applyDefaultStyles={true}>

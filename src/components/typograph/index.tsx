@@ -13,7 +13,6 @@ const Typograph = ({ variant = 'p', children, className, applyDefaultStyles = tr
 	const Component = variant;
 
 	const componentClassName = applyDefaultStyles ? `${styles.typography}${className}` : className;
-	console.log('Typograph', { variant, children, className, props });
 	return (
 		<Component className={componentClassName} {...props}>
 			{children}
