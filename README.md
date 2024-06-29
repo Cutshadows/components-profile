@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# FILEPATH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+class Button:
+ """
+ Represents a button component.
 
-Currently, two official plugins are available:
+ Attributes:
+  text (str): The text displayed on the button.
+  color (str): The color of the button.
+  size (str): The size of the button.
+ """
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ def __init__(self, text, color, size):
+  """
+  Initializes a new instance of the Button class.
 
-## Expanding the ESLint configuration
+  Args:
+   text (str): The text displayed on the button.
+   color (str): The color of the button.
+   size (str): The size of the button.
+  """
+  self.text = text
+  self.color = color
+  self.size = size
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ def click(self):
+  """
+  Simulates a button click event.
+  """
+  print(f"Button clicked: {self.text}")
