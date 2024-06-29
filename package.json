@@ -7,7 +7,7 @@
   "main": "dist/common-components-test.cjs",
   "homepage": "https://my-personal-profile-black.vercel.app/",
   "repository": {
-    "url": "https://github.com/Cutshadows/my-storybook",
+    "url": "git+https://github.com/Cutshadows/my-storybook.git",
     "type": "git"
   },
   "release": {
