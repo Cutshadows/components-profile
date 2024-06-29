@@ -1,0 +1,47 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+    /* principal colors */
+	--main-background-color: rgb(243 244 246);
+	--main-active-background-color: rgb(30,153,229);
+	/* #1e88e5 */
+	--secondary-background-color: #fff;
+	
+	--animation-point-ping: cubic-bezier(1, 0, .2, 3) infinite;
+	--text-color-global-primary: #fff;
+
+	--text-color-paragraph: rgb(17 24 39);
+	--text-color-base: rgb(243 244 246);
+
+
+	/* COLOR BASE POINTERS */
+	--color-background-base-point: rgb(250 232 255);
+	--color-background-secondary-point: rgb(25,126,215);
+	--color-background-pointer-ping: rgb(188,220,247); 
+
+	/* CARD ADD ROASTER */
+	--bg-card-roaster-color: rgb(243 244 246);
+	--text-color-btn-plus: rgb(156 163 175); 
+	--text-color-secondary: rgb(107 114 128);
+	--text-color-principal: rgb(75 85 99); 
+	/* text-gray 400 500 and 600 */
+
+	--components-ui-border-radius2: 8px;
+    --components-ui-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	--components-ui-transition: ease all 0.2s;
+	/* definition color btns */
+	--components-btn-color-primary: #48bfe3;
+	--components-btn-color-secondary: #a9d6e5;
+	--components-btn-color-warning: #ffd500;
+}

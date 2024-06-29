@@ -27,7 +27,7 @@ jobs:
           node-version: 18.18
 
       - name: Install Dependencies
-        run: npm i
+        run: npm i --legacy-peer-deps
 
       - name: Build Project
         run: npm run build

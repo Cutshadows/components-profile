@@ -1,0 +1,46 @@
+.container {
+	display: flex;
+	height: .75rem;
+	width: .75rem;
+	position: absolute;
+	
+}
+
+.point {
+	position: relative;
+	display: inline-flex;
+	border-radius: 9999px;
+	height: .8rem;
+	width: .8rem;
+	background-color: var(--color-background-base-point);
+	top: .15rem;
+}
+
+.point-lost-focus{
+	position: relative;
+	display: inline-flex;
+	border-radius: 9999px;
+	height: .8rem;
+	width: .8rem;
+	background-color: var(--color-background-secondary-point);
+	top: .15rem;
+}
+
+
+.ping{
+	position: absolute;
+	opacity: 0;
+	display: inline-flex;
+	height: 1rem;
+	width: 1rem;
+	border-radius: 100%;
+	animation: ping 1s var(--animation-point-ping);
+	background-color: var(--color-background-pointer-ping);
+}
+
+@keyframes ping {
+	75%, 100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}

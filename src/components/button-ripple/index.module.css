@@ -1,0 +1,175 @@
+.button {
+	position: relative;
+	overflow: hidden;
+	align-items: center;
+	border: 2px solid #111;
+	border-radius: 8px;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-family: Inter, sans-serif;
+	font-size: 16px;
+	height: 48px;
+	justify-content: center;
+	line-height: 24px;
+	max-width: 100%;
+	padding: 0 25px;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	outline: 0;
+	color: #111;
+}
+
+button.ripple {
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	transform: scale(0);
+	animation: ripple 0.6s linear;
+}
+
+.button:after {
+	background-color: #111;
+	border-radius: 8px;
+	content: '';
+	display: block;
+	height: 48px;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	top: -2px;
+	transform: translate(8px, 8px);
+	transition: transform 0.2s ease-out;
+	z-index: -1;
+}
+
+.button:hover:after {
+	transform: translate(0, 0);
+	outline: 0;
+
+}
+
+.button:active {
+	background-color: #00b4d8;
+	outline: 0;
+}
+
+.button>* {
+  pointer-events: none;
+}
+
+.button[data-variant="primary"]{
+	background-color: var(--components-btn-color-primary);
+}
+
+.button[data-variant="primary"]:hover{
+	background: var(--components-btn-color-secondary);
+}
+
+
+
+.secondary {
+	color: #111;
+	background-color: #a5c9e0;
+}
+.warning {
+	background-color: #ffd60a;
+	color: #111;
+}
+.dark {
+	background-color: #0077b6;
+	color: #111;
+}
+
+.button[data-size='l'][data-icon='true'] {
+	padding-right: 14.5px;
+	padding-left: 14.5px;
+}
+
+.button > * {
+	pointer-events: none;
+}
+
+.button > .iconLeft {
+	position: absolute;
+	left: 8px;
+}
+
+.button[data-size='l'] .iconLeft {
+	position: absolute;
+	left: 10px;
+}
+
+.button > .iconRight {
+	position: absolute;
+	right: 8px;
+}
+
+.button[data-size='l'] .iconRight {
+	position: absolute;
+	right: 10px;
+}
+
+.button[data-icon-left='true'] {
+	padding-left: 35px;
+}
+
+.button[data-icon-left='true'][data-size='xs'] {
+	padding-left: 30px;
+}
+
+.button[data-size='m'][data-icon-left='true'] {
+	padding-left: 40px;
+}
+
+.button[data-size='l'][data-icon-left='true'] {
+	padding-left: 43px;
+}
+
+.button[data-icon-right='true'] {
+	padding-right: 35px;
+}
+
+.button[data-icon-right='true'][data-size='xs'] {
+	padding-right: 30px;
+}
+
+.button[data-size='m'][data-icon='true'] {
+	padding-right: 12px;
+	padding-left: 12px;
+}
+
+.button[data-size='m'][data-icon-right='true'] {
+	padding-right: 40px;
+}
+
+.button[data-size='l'][data-icon-right='true'] {
+	padding-right: 43px;
+}
+
+.button[data-size='l'][data-icon='true'] {
+	padding-right: 14.5px;
+	padding-left: 14.5px;
+}
+
+/* data id from calendar needs */
+
+.button[data-id="prev"]{
+	height: 100vh;
+}
+.button[data-id="next"]{
+
+}
+
+@media (min-width: 768px) {
+	.button {
+		padding: 0 40px;
+	}
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}

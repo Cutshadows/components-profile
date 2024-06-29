@@ -1,7 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  build: {
+    lib: {
+      entry: 'src/components/index.ts',
+      name: 'common-components-test',
+      formats: ['umd', 'cjs', 'es'],
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
+  },
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
+  css: {
+    modules: {
+      generateScopedName: 'common-components-test__[name]__[local]___[hash:base64:5]',
+    },
+  },
+});
