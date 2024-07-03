@@ -4,7 +4,7 @@
   "type": "module",
   "private": false,
   "license": "MIT",
-  "main": "dist/common-components-test.cjs",
+  "main": "dist/components-profile.cjs",
   "homepage": "https://my-personal-profile-black.vercel.app/",
   "repository": {
     "url": "git+https://github.com/Cutshadows/components-profile.git",
