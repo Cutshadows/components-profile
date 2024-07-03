@@ -1,10 +1,10 @@
 {
-  "name": "@t-aught/components",
-  "version": "1.0.2",
+  "name": "components-profile",
+  "version": "1.0.0",
   "type": "module",
   "private": false,
   "license": "MIT",
-  "main": "dist/components.cjs",
+  "main": "dist/common-components-test.cjs",
   "homepage": "https://my-personal-profile-black.vercel.app/",
   "repository": {
     "url": "git+https://github.com/Cutshadows/components-profile.git",
@@ -115,6 +115,6 @@
     "@semantic-release/git"
   ],
   "preset": "react",
-  "module": "dist/components.js",
+  "module": "dist/common-components-test.js",
   "types": "dist/index.d.ts"
 }
