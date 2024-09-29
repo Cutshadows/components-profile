@@ -4,7 +4,7 @@ const ArrowRightOutline = () => {
 			{/* <title>arrow-right-square</title>
 			<desc>Created with Sketch Beta.</desc>
 			<defs></defs>
-			<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
 				<g
 					id="Icon-Set"
 					transform="translate(-464.000000, -983.000000)"
