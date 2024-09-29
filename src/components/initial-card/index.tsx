@@ -21,7 +21,7 @@ const InitialCard = (props : InitialCardProps) => {
 				draggable={props.draggable}>
 						<label htmlFor="fileInput" className={style['input-add']}>
 							<svg className={style['icon-plus']} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+								<path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 							</svg>
 							<span className={style['principal-text']}>Add schedule time here</span>
 							<span className={style['secondary-text']}>(or click to select)</span>
